@@ -1,4 +1,3 @@
-import pytest
 from playwright.sync_api import sync_playwright
 
 def test_open_website():
@@ -11,13 +10,9 @@ def test_open_website():
         
         page.wait_for_load_state("load")
         
-        title = page.title()
+        title = page.title()                        
         
-        print(title)
-        
-        flag: bool
-        
-        flag = title == "Radosav's Portfolio"
+        flag: bool = title == "Radosav's Portfolio"
         
         assert flag, f"Expected title to be 'Radosav's Portfolio' but got '{title}'"
                 
